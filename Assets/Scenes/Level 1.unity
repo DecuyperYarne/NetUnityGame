@@ -682,6 +682,46 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114563936986414546, guid: 8c8d81304a44098488b39bcda79cb2cd,
+        type: 3}
+      propertyPath: nextLevel
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114635678187993920, guid: 8c8d81304a44098488b39bcda79cb2cd,
+        type: 3}
+      propertyPath: throwspeed
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114635678187993920, guid: 8c8d81304a44098488b39bcda79cb2cd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50007234625199460, guid: 8c8d81304a44098488b39bcda79cb2cd,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 50007234625199460, guid: 8c8d81304a44098488b39bcda79cb2cd,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50007234625199460, guid: 8c8d81304a44098488b39bcda79cb2cd,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50007234625199460, guid: 8c8d81304a44098488b39bcda79cb2cd,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50007234625199460, guid: 8c8d81304a44098488b39bcda79cb2cd,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8d81304a44098488b39bcda79cb2cd, type: 3}
 --- !u!1 &1392756740
@@ -951,7 +991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51b2d253267b574594525a2e3f86fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Level 2
   levelText: {fileID: 1392756742}
   playerPrefab: {fileID: 1972154723549074, guid: 8c8d81304a44098488b39bcda79cb2cd,
     type: 3}
@@ -1320,8 +1359,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984331443}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8836508, y: 0.67093146, z: 1}
+  m_LocalPosition: {x: 0.16, y: -0.183, z: 0}
+  m_LocalScale: {x: 0.6960611, y: 0.69170964, z: 0.919}
   m_Children: []
   m_Father: {fileID: 2084573379}
   m_RootOrder: 0

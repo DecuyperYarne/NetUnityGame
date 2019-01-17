@@ -41,8 +41,9 @@ public class DragPlayer : MonoBehaviour
             if (!isJumping)
             {
                 isJumping = true;
-                Vector2 directionVec = -directionDistance;
+                Vector2 directionVec = -directionDistance * 10;
                 Debug.Log(directionVec);
+           
                 rigidbody2D.AddForce(new Vector2(directionVec.x * throwspeed * Time.deltaTime, directionVec.y * throwspeed * Time.deltaTime));
             }
         }

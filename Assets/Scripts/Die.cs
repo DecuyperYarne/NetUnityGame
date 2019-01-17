@@ -6,7 +6,7 @@ public class Die : MonoBehaviour
 {
     private Vector3 startPosition;
 
-    private GameManager playerSpawner;
+    private GameManager gm;
     [SerializeField]
     private float boundsX, boundsY;
 
@@ -14,15 +14,16 @@ public class Die : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
-        playerSpawner = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if(gameObject.transform.position.x > boundsX || gameObject.transform.position.x < -boundsX || gameObject.transform.position.y > boundsY || gameObject.transform.position.y < -boundsY){
-            playerSpawner.SpawnPlayer(startPosition);
-            Destroy(this.gameObject);
+            transform.position = startPosition;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            gm.ResetCoins();
         }
     }
 }

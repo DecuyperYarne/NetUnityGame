@@ -8,6 +8,7 @@ public class CoinGathering : MonoBehaviour
     [SerializeField]
     private int coinAmount;
     private int maxCoins = 3;
+    public string nextLevel;
 
     GameManager gameManager;
 
@@ -29,7 +30,8 @@ public class CoinGathering : MonoBehaviour
         {
             timeTillNextLevel -= Time.deltaTime;
             if (timeTillNextLevel < 0)
-                gameManager.LoadLevel();
+                Debug.Log(nextLevel);
+                gameManager.LoadLevel(nextLevel);
         }
     }
 

@@ -8,9 +8,6 @@ public class GameManager : MonoBehaviour
 {
 
     [SerializeField]
-    private string nextLevel;
-
-    [SerializeField]
     private Text levelText;
 
     [SerializeField]
@@ -36,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void SpawnPlayer(Vector3 position)
+    public void ResetCoins()
     {
         // Reset all coins
         foreach (GameObject coin in coins)
@@ -44,13 +41,12 @@ public class GameManager : MonoBehaviour
             coin.SetActive(true);
         }
 
-        // Reset player position
-        Instantiate(playerPrefab, position, Quaternion.identity);
         coinGathering.ResetPoints();
     }
 
-    public void LoadLevel()
+    public void LoadLevel(string nextLevel)
     {
+        Debug.Log(nextLevel);
         SceneManager.LoadScene(nextLevel);
     }
 }
