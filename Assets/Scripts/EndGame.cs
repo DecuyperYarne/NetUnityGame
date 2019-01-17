@@ -43,23 +43,27 @@ public class EndGame : MonoBehaviour
 
     public void ShowHighscores() {
         StartCoroutine(SendHighscore());
-        Debug.Log("Highscores here");
+        Application.OpenURL("https://localhost:44371/highscores");
     }
 
 
     IEnumerator SendHighscore() {
-        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
-        formData.Add(new MultipartFormDataSection("name="+ nicknameInput.text + "&level=" + reachedLevel));
-        UnityWebRequest www = UnityWebRequest.Post("testlinkwontwork", formData);
-        yield return www.SendWebRequest();
+        WWWForm form = new WWWForm();
+        form.AddField("name", nicknameInput.text);
+        form.AddField("highscore", reachedLevel);
 
-        if (www.isNetworkError || www.isHttpError)
+        using (UnityWebRequest www = UnityWebRequest.Post("https://localhost:44371/end", form))
         {
-            Debug.Log(www.error);
-        }
-        else
-        {
-            Debug.Log("Form upload complete!");
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("Form upload complete!");
+            }
         }
     }
 }
