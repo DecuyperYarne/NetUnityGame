@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Text levelText;
+    static int reachedLevel = 0;
 
     [SerializeField]
     private GameObject playerPrefab;
