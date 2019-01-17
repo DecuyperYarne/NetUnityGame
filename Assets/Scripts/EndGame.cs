@@ -14,7 +14,7 @@ public class EndGame : MonoBehaviour
     void Start()
     {
         if (highscoreText && reachedLevel != 0) {
-            highscoreText.text = "You reached level:" + reachedLevel;
+            highscoreText.text = "You reached level " + reachedLevel;
         }
     }
 
@@ -28,5 +28,15 @@ public class EndGame : MonoBehaviour
     {
         reachedLevel = level;
         SceneManager.LoadScene("endgame");
+    }
+
+
+    public void RestartGame() {
+        reachedLevel = 0;
+        SceneManager.LoadScene(0);
+    }
+
+    public void ShowHighscores() {
+        Debug.Log("Highscores here");
     }
 }
